@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,29 +9,100 @@
     <script>
       tailwind.config = {
         darkMode: 'class',
-        theme: { 
+        theme: {
           extend: {
             colors: {
               brand: {
-                50: '#f0f9ff',
-                100: '#e0f2fe',
-                500: '#0ea5e9',
-                600: '#0284c7',
-                900: '#0c4a6e',
+                50: '#E3F2FD',
+                100: '#BBDEFB',
+                // Dark Theme Primary Accent: Electric Azure
+                400: '#00BFFF', 
+                500: '#2196F3',
+                // Light Theme Primary Accent: Deep Ocean Blue
+                600: '#1A5276',
+                700: '#154360',
+                800: '#0E2E42',
+                900: '#0D1B2A',
+              },
+              accent: {
+                light: '#FFB74D', // Soft Amber Gold
+                dark: '#69F0AE',  // Pale Mint Green
+              },
+              light: {
+                bg: '#F7F8FA',      // White Smoke
+                card: '#FFFFFF',    // Pure White
+                text: '#263238',    // Dark Charcoal
+                border: '#E0E0E0',  // Subtle grey
+                muted: '#546E7A'
               },
               dark: {
-                bg: '#0f172a',
-                card: '#1e293b',
+                bg: '#0D1B2A',      // Midnight Deep Slate
+                card: '#1E3A52',    // Dark Cerulean
+                input: '#0A1622',   // Deep cut-out
+                border: '#2C4A64',  // Integrated border
+                text: '#BCC3CC',    // Soft Cloud Grey
+                muted: '#78909C'
               }
+            },
+            fontFamily: {
+              sans: ['Lato', 'sans-serif'],
+              display: ['Montserrat', 'sans-serif'],
+              serif: ['Merriweather', 'serif'],
             }
           }
         }
       }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Imported Montserrat and Lato -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
-      body { font-family: 'Inter', sans-serif; }
-      .font-serif { font-family: 'Merriweather', serif; }
+      body { 
+        font-family: 'Lato', sans-serif; 
+        scroll-behavior: smooth;
+      }
+      h1, h2, h3, h4, h5, h6, .font-display {
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      /* Premium Fluid Transitions (250ms) */
+      *, *::before, *::after {
+        transition-property: background-color, border-color, color, fill, stroke, transform, box-shadow, opacity;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 250ms;
+      }
+      
+      .shimmer {
+        position: relative;
+        overflow: hidden;
+      }
+      .shimmer::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background-image: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0,
+          rgba(255, 255, 255, 0.1) 20%,
+          rgba(255, 255, 255, 0.2) 60%,
+          rgba(255, 255, 255, 0)
+        );
+        animation: shimmer 2s infinite;
+        content: '';
+      }
+      @keyframes shimmer {
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      /* Custom Scrollbar */
+      .dark ::-webkit-scrollbar { width: 8px; }
+      .dark ::-webkit-scrollbar-track { background: #0D1B2A; }
+      .dark ::-webkit-scrollbar-thumb { background: #1E3A52; border-radius: 4px; }
+      .dark ::-webkit-scrollbar-thumb:hover { background: #00BFFF; }
     </style>
 
 <link rel="stylesheet" href="/index.css">
@@ -47,7 +119,7 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/casaam-academy/assets/index-CWPfLRBf.js"></script>
+  <script type="module" crossorigin src="/skillbaro/assets/index-DIDgZAbB.js"></script>
 </head>
   <body>
     <div id="root"></div>
